@@ -1,0 +1,24 @@
+{
+  "title": "BCX SDK - Transaction History",
+  "description": "Schema definition for BCX SDK - txHistory method",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "address1": {
+      "type": "string"
+    },
+    "address2": {
+      "type": "string"
+    },
+    "asset": {
+      "type": "string"
+    },
+    "nbTx": {
+      "type": "number"
+    },
+    "fromIndex": {
+      "type": "number"
+    }
+  },
+  "required": ["address1"]
+}

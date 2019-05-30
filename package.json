@@ -1,0 +1,62 @@
+{
+  "name": "blockchain-explorer-sdk",
+  "version": "0.1.2",
+  "description": "The Blockchain Explorer SDK (aka BCX).",
+  "main": "./dist/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "NODE_ENV=test jest",
+    "test:coverage": "jest --coverage",
+    "build": "webpack",
+    "build-production": "webpack --mode=production",
+    "plato": "es6-plato -r -d ./reports/plato ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pillarwallet/blockchain-explorer-sdk.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pillarwallet/blockchain-explorer-sdk/issues"
+  },
+  "homepage": "https://github.com/pillarwallet/blockchain-explorer-sdk#readme",
+  "dependencies": {
+    "ajv": "6.5.1",
+    "convict": "4.2.0",
+    "request": "2.87.0",
+    "request-promise": "4.2.2",
+    "webpack": "4.10.2",
+    "webpack-cli": "3.0.1"
+  },
+  "devDependencies": {
+    "es6-plato": "latest",
+    "eslint": "5.0.1",
+    "eslint-config-airbnb-base": "13.0.0",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-jest": "21.17.0",
+    "jest": "22.4.3",
+    "jest-html-reporter": "2.0.0"
+  },
+  "jest": {
+    "roots": [
+      "src",
+      "test"
+    ],
+    "testRegex": "\\.test\\.js$",
+    "testResultsProcessor": "./node_modules/jest-html-reporter",
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/reports/**"
+    ],
+    "coverageReporters": [
+      "lcov"
+    ],
+    "coverageDirectory": "./reports"
+  },
+  "jest-html-reporter": {
+    "pageTitle": "Jest results",
+    "outputPath": "./reports/jest/test-report.html",
+    "includeFailureMsg": true
+  }
+}
